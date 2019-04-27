@@ -1,6 +1,7 @@
 tool
 extends Node2D
 
+var sum_value
 #export (int, 1, 10) var pocket_count setget set_pocket_count
 #export (float, 0, 1000) var height setget set_height
 #export (float, 0, 1000) var width setget set_width
@@ -39,4 +40,5 @@ extends Node2D
 #func _ready():
 #	print("preloading")
 #	pocket_scene = preload("res://instantiable/stage/CashRegisterPocket.tscn")
+
 
