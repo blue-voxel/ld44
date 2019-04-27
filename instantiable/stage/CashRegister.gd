@@ -39,3 +39,4 @@ extends Node2D
 #func _ready():
 #	print("preloading")
 #	pocket_scene = preload("res://instantiable/stage/CashRegisterPocket.tscn")
+
