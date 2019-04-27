@@ -12,11 +12,12 @@ collision_mask = 4
 
 [node name="Value" type="Node" parent="."]
 script = ExtResource( 1 )
+amount = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 script = ExtResource( 2 )
-col = Color( 0.211765, 0.482353, 0.47451, 1 )
+col = Color( 0.603922, 0.65098, 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 

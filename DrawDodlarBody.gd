@@ -4,9 +4,6 @@ extends "res://script/colshape2d/DrawShape.gd"
 #	draw_rect(Rect2(position - shape.extents, shape.extents * 2), col)
 #since you're inherting, it's not neccesary to keep these
 
-func circle():
-	draw_circle(position, shape.radius, col)
-
 func _ready():
 	#_set_color(Color("#0074D9")) this should be set in the editor, that's what "export" is for
 	draw_type = CIRCLE

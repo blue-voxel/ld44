@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://instantiable/stage/CashRegister.tscn" type="PackedScene" id=1]
-[ext_resource path="res://instantiable/currency/_test/Coin1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://script/custom/Value.gd" type="Script" id=3]
-[ext_resource path="res://DrawDodlarBody.gd" type="Script" id=4]
-[ext_resource path="res://script/colshape2d/DrawShape.gd" type="Script" id=5]
-[ext_resource path="res://CursorBody.gd" type="Script" id=6]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 21.2317
+[ext_resource path="res://script/colshape2d/DrawShape.gd" type="Script" id=2]
+[ext_resource path="res://CursorBody.gd" type="Script" id=3]
+[ext_resource path="res://instantiable/currency/_test/Coin1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://instantiable/currency/_test/Coin2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://instantiable/currency/_test/Coin5.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 286, 32 )
@@ -21,39 +18,6 @@ extents = Vector2( 286, 32 )
 position = Vector2( 186, 388 )
 scale = Vector2( 4, 4 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2( 533.714, 198.46 )
-collision_layer = 5
-collision_mask = 4
-
-[node name="Value" type="Node" parent="RigidBody2D2"]
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-shape = SubResource( 1 )
-script = ExtResource( 4 )
-col = Color( 0, 0, 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="RigidBody2D2"]
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 570.714, 247.46 )
-collision_layer = 5
-collision_mask = 4
-
-[node name="Value" type="Node" parent="RigidBody2D3"]
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-shape = SubResource( 1 )
-script = ExtResource( 4 )
-col = Color( 0, 0, 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="RigidBody2D3"]
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 448, 390 )
 collision_layer = 0
@@ -61,19 +25,37 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 274, -18 )
 shape = SubResource( 2 )
-script = ExtResource( 5 )
+script = ExtResource( 2 )
 col = Color( 0.443137, 0.188235, 0.188235, 1 )
 
 [node name="CursorBody" type="StaticBody2D" parent="."]
 position = Vector2( 439.714, 247.46 )
 collision_layer = 0
 collision_mask = 0
-script = ExtResource( 6 )
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CursorBody"]
 shape = SubResource( 3 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CursorBody"]
 node_a = NodePath("..")
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 552, 236 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 750, 198 )
+
+[node name="RigidBody2D3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 634, 122 )
+
+[node name="RigidBody2D4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 810, 96 )
+
+[node name="RigidBody2D5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 686, 60 )
+
+[node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 876, 222 )
 
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
