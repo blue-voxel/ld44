@@ -19,6 +19,10 @@ config/name="Your life is currency"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[physics]
+
+2d/default_gravity=400
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

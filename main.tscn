@@ -40,8 +40,6 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CursorBody"]
 shape = SubResource( 3 )
-script = ExtResource( 1 )
-col = Color( 0.0431373, 0.937255, 0.905882, 1 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CursorBody"]
 node_a = NodePath("..")
