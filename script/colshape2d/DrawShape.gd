@@ -7,7 +7,8 @@ enum {RECT, CIRCLE}
 var draw_type = null
 
 func rectangle():
-	draw_rect(Rect2(position - shape.extents, shape.extents * 2), col)
+	print(position)
+	draw_rect(Rect2(-shape.extents, shape.extents * 2), col)
 
 func circle():
 	draw_circle(position, shape.radius, col)
@@ -29,3 +30,6 @@ func _draw():
 func _set_color(color):
 	col = color
 	update()
+
+func update():
+	pass # Replace with function body.
