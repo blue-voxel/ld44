@@ -39,6 +39,7 @@ shape = SubResource( 3 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CursorBody"]
 node_a = NodePath("..")
+bias = 0.9
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 552, 236 )

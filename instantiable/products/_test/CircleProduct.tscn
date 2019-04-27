@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/colshape2d/DrawShape.gd" type="Script" id=1]
+[ext_resource path="res://script/custom/Value.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 36.4966
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+col = Color( 0.909804, 0.72549, 0.121569, 1 )
+
+[node name="Value" type="Node" parent="."]
+script = ExtResource( 2 )
+amount = 3
+
