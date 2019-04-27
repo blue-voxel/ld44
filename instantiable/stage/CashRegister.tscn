@@ -4,6 +4,7 @@
 [ext_resource path="res://instantiable/stage/CashRegisterPocket.tscn" type="PackedScene" id=2]
 
 [node name="CashRegister" type="Node2D"]
+position = Vector2( -12, 0 )
 script = ExtResource( 1 )
 
 [node name="Pocket" parent="." instance=ExtResource( 2 )]
@@ -12,7 +13,7 @@ position = Vector2( 48.2659, 0 )
 [node name="Pocket1" parent="." instance=ExtResource( 2 )]
 
 [node name="Pocket2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -23.3008, 0 )
+position = Vector2( -24, 0 )
 
 [node name="Pocket3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 24.1748, 0 )

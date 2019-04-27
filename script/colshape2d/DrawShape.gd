@@ -7,7 +7,6 @@ enum {RECT, CIRCLE}
 var draw_type = null
 
 func rectangle():
-	print(position)
 	draw_rect(Rect2(-shape.extents, shape.extents * 2), col)
 
 func circle():
@@ -16,7 +15,6 @@ func circle():
 func _ready():
 	if shape.is_class("RectangleShape2D"):
 		draw_type = RECT
-		print(shape.extents)
 	elif shape.is_class("CircleShape2D"):
 		draw_type = CIRCLE
 

@@ -17,7 +17,7 @@ func _process(delta):
 	time_elapsed += delta * 3
 	offset = sin(time_elapsed) * 0.6
 	var max_offset = sin(0) * 0.6
-	print((abs(max_offset - offset)))
+	#print((abs(max_offset - offset)))
 	eye_radius = (1 - abs(max_offset - offset)) * shape.radius * 0.5
 	offset *= shape.radius
 	update()
