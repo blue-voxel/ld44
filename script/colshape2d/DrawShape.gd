@@ -1,7 +1,7 @@
 tool
 extends CollisionShape2D
 
-export (Color, RGB) var col = Color(1,0,0,1) setget _set_color
+export (Color, RGBA) var col = Color(1,0,0,1) setget _set_color
 
 enum {RECT, CIRCLE}
 var draw_type = null

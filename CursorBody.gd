@@ -11,7 +11,6 @@ func _input(event):
 		attach_body()
 	elif event is InputEventMouseMotion:
 		physics_position = event.position
-		print($PinJoint2D.node_b)
 		pass
 
 func _physics_process(delta):
@@ -23,5 +22,4 @@ func attach_body():
 	else:
 		var intersect = get_world_2d().direct_space_state.intersect_point(position, 1, [self]) #get 1 bodies at current position (except self) on layer 3 only (bit 4)
 		if intersect:
-			print(intersect[0])
 			$PinJoint2D.set_node_b(intersect[0].collider.get_path())
