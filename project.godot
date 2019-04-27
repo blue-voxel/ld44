@@ -26,7 +26,7 @@ config/icon="res://icon.png"
 
 [physics]
 
-2d/default_gravity=400
+2d/default_gravity=1600
 
 [rendering]
 
