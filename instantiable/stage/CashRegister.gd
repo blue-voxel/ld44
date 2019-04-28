@@ -34,6 +34,14 @@ func _ready():
 	for i in range(len(pockets)):
 		pockets[i].accept_only = Utils.MONEY[i]
 
+func _process(delta):
+	get_sum_value()
+
+func get_sum_value():
+	sum_value = 0
+	for p in pockets:
+		sum_value += p.sum_value
+
 #export (int, 1, 10) var pocket_count setget set_pocket_count
 #export (float, 0, 1000) var height setget set_height
 #export (float, 0, 1000) var width setget set_width
