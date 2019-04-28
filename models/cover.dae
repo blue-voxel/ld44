@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.80.54 commit date:2019-04-07, commit time:15:02, hash:75f551facaf0</authoring_tool>
+    </contributor>
+    <created>2019-04-28T16:36:13</created>
+    <modified>2019-04-28T16:36:13</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="Torus_001-mesh" name="Torus.001">
+      <mesh>
+        <source id="Torus_001-mesh-positions">
+          <float_array id="Torus_001-mesh-positions-array" count="72">-0.9783542 1.254849 0 -0.8826834 1.02388 0.25 -0.7870125 0.7929096 0 -0.8826834 1.02388 -0.25 -1.65485 0.578354 0 -1.42388 0.4826831 0.25 -1.19291 0.3870124 0 -1.42388 0.4826831 -0.25 -1.65485 -1.49012e-7 0 -1.42388 -1.19209e-7 0.25 -1.19291 0 0 -1.42388 -1.19209e-7 -0.25 0.9783542 1.254849 0 0.8826834 1.02388 0.25 0.7870125 0.7929096 0 0.8826834 1.02388 -0.25 1.65485 0.578354 0 1.42388 0.4826831 0.25 1.19291 0.3870124 0 1.42388 0.4826831 -0.25 1.65485 -1.49012e-7 0 1.42388 -1.19209e-7 0.25 1.19291 0 0 1.42388 -1.19209e-7 -0.25</float_array>
+          <technique_common>
+            <accessor source="#Torus_001-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Torus_001-mesh-normals">
+          <float_array id="Torus_001-mesh-normals-array" count="108">0 0.7345095 0.6785985 0 -0.7345096 0.6785984 0 -0.7345096 -0.6785984 -0.5193768 0.5193766 0.6785984 0.5193767 -0.5193766 0.6785985 0.5193767 -0.5193766 -0.6785985 -0.5193768 0.5193765 -0.6785985 -0.7345096 0 -0.6785984 0.7345096 0 -0.6785984 0.7345096 0 0.6785984 -0.7345096 0 0.6785984 1.61289e-7 -1 0 0.5193768 0.5193765 0.6785985 -0.5193768 -0.5193768 0.6785984 -0.5193767 -0.5193766 -0.6785985 0.5193769 0.5193768 -0.6785981 -0.7345096 0 -0.6785984 -0.7345096 0 0.6785984 -1.61289e-7 -1 0 0 0.7345096 -0.6785984 0 0.7345097 0.6785982 0 -0.7345096 0.6785984 0 -0.7345096 -0.6785984 -0.5193769 0.5193768 0.6785982 0.5193768 -0.5193768 0.6785984 0.5193768 -0.5193768 -0.6785984 -0.5193769 0.5193768 -0.6785981 0.7345096 0 0.6785984 1.61289e-7 -1 0 0.5193769 0.5193768 0.6785981 -0.5193767 -0.5193766 0.6785985 -0.5193768 -0.5193768 -0.6785984 0.5193768 0.5193765 -0.6785985 0.7345096 0 -0.6785984 -1.61289e-7 -1 0 0 0.7345096 -0.6785984</float_array>
+          <technique_common>
+            <accessor source="#Torus_001-mesh-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Torus_001-mesh-map-0">
+          <float_array id="Torus_001-mesh-map-0-array" count="264">0.75 0.75 0.75 0.5 0.75 0.75 0.75 1 0.75 0.75 0.75 1 0.75 0.25 0.75 0 0.75 0.25 0.875 0.5 0.75 0.75 0.75 0.5 0.75 0.75 0.875 1 0.75 1 0.875 0 0.75 0.25 0.75 0 0.75 0.25 0.875 0.5 0.75 0.5 0.875 0.25 0.9375 0.5 0.875 0.5 0.875 0 0.9375 0.25 0.875 0.25 0.9375001 0.7500001 0.875 1 0.875 0.75 0.9375 0.5 0.875 0.75 0.875 0.5 0.9375 0 0.9375 0.5 0.9375 0.25 0.75 0.75 0.875 0.5 0.75 0.5 0.75 0.75 0.875 1 0.875 0.75 0.75 0.25 0.875 0 0.75 0 0.75 0.25 0.875 0.5 0.875 0.25 0.875 0.25 0.9375 0.5 0.9375 0.25 0.875 0 0.9375 0.25 0.9375 0 0.875 1 0.9375001 0.7500001 0.875 0.75 0.875 0.75 0.9375 0.5 0.875 0.5 0.9375 0.5 0.9375 0 0.9375 0.25 0.75 0.5 0.75 0.25 0.75 0.5 0.75 0.75 0.75 0.5 0.75 0.5 0.75 1 0.75 0.75 0.75 0.75 0.75 0.25 0.75 0 0.75 0 0.875 0.5 0.875 0.75 0.75 0.75 0.75 0.75 0.875 0.75 0.875 1 0.875 0 0.875 0.25 0.75 0.25 0.75 0.25 0.875 0.25 0.875 0.5 0.875 0.25 0.9375 0.25 0.9375 0.5 0.875 0 0.9375 0 0.9375 0.25 0.9375001 0.7500001 0.9375 1 0.875 1 0.9375 0.5 0.9375001 0.7500001 0.875 0.75 0.9375 0 0.9375001 0.7500001 0.9375 0.5 0.75 0.75 0.875 0.75 0.875 0.5 0.75 0.75 0.75 1 0.875 1 0.75 0.25 0.875 0.25 0.875 0 0.75 0.25 0.75 0.5 0.875 0.5 0.875 0.25 0.875 0.5 0.9375 0.5 0.875 0 0.875 0.25 0.9375 0.25 0.875 1 0.9375 1 0.9375001 0.7500001 0.875 0.75 0.9375001 0.7500001 0.9375 0.5 0.9375 0.5 0.9375001 0.7500001 0.9375 0 0.75 0.5 0.75 0.25 0.75 0.25</float_array>
+          <technique_common>
+            <accessor source="#Torus_001-mesh-map-0-array" count="132" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Torus_001-mesh-vertices">
+          <input semantic="POSITION" source="#Torus_001-mesh-positions"/>
+        </vertices>
+        <triangles count="44">
+          <input semantic="VERTEX" source="#Torus_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Torus_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Torus_001-mesh-map-0" offset="2" set="0"/>
+          <p>13 0 0 0 0 1 1 0 2 14 1 3 1 1 4 2 1 5 15 2 6 2 2 7 3 2 8 4 3 9 1 3 10 0 3 11 1 4 12 6 4 13 2 4 14 6 5 15 3 5 16 2 5 17 3 6 18 4 6 19 0 6 20 7 7 21 8 7 22 4 7 23 6 8 24 11 8 25 7 8 26 9 9 27 6 9 28 5 9 29 8 10 30 5 10 31 4 10 32 10 11 33 8 11 34 11 11 35 13 12 36 16 12 37 12 12 38 13 13 39 18 13 40 17 13 41 15 14 42 18 14 43 14 14 44 15 15 45 16 15 46 19 15 47 19 8 48 20 8 49 23 8 50 18 16 51 23 16 52 22 16 53 18 17 54 21 17 55 17 17 56 17 9 57 20 9 58 16 9 59 20 18 60 22 18 61 23 18 62 12 19 63 3 19 64 0 19 65 13 20 66 12 20 67 0 20 68 14 21 69 13 21 70 1 21 71 15 22 72 14 22 73 2 22 74 4 23 75 5 23 76 1 23 77 1 24 78 5 24 79 6 24 80 6 25 81 7 25 82 3 25 83 3 26 84 7 26 85 4 26 86 7 16 87 11 16 88 8 16 89 6 8 90 10 8 91 11 8 92 9 27 93 10 27 94 6 27 95 8 17 96 9 17 97 5 17 98 10 28 99 9 28 100 8 28 101 13 29 102 17 29 103 16 29 104 13 30 105 14 30 106 18 30 107 15 31 108 19 31 109 18 31 110 15 32 111 12 32 112 16 32 113 19 33 114 16 33 115 20 33 116 18 16 117 19 16 118 23 16 119 18 17 120 22 17 121 21 17 122 17 27 123 21 27 124 20 27 125 20 34 126 21 34 127 22 34 128 12 35 129 15 35 130 3 35 131</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Cube_001-mesh" name="Cube.001">
+      <mesh>
+        <source id="Cube_001-mesh-positions">
+          <float_array id="Cube_001-mesh-positions-array" count="36">-1.838518 0 -0.7892373 -1.838518 0 0.7892373 -1.838518 2.723833 0.7892373 1.838518 0 -0.7892373 1.838518 0 0.7892373 1.838518 2.723833 0.7892373 -1.838518 0.05999994 -0.7892373 -1.838518 0.05999994 0.7292373 -1.838518 2.723833 0.7292373 1.838518 0.05999994 -0.7892373 1.838518 0.05999994 0.7292373 1.838518 2.723833 0.7292373</float_array>
+          <technique_common>
+            <accessor source="#Cube_001-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_001-mesh-normals">
+          <float_array id="Cube_001-mesh-normals-array" count="24">0 -1 0 0 0 1 0 1 0 0 0 -1 -1 0 0 1 0 0 1 1.57337e-6 0 -1 1.57337e-6 0</float_array>
+          <technique_common>
+            <accessor source="#Cube_001-mesh-normals-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_001-mesh-map-0">
+          <float_array id="Cube_001-mesh-map-0-array" count="120">0.625 0.75 0.375 1 0.375 0.75 0.875 0.5 0.625 0.75 0.625 0.5 0.375 1 0.625 0.75 0.375 0.75 0.625 0.75 0.875 0.5 0.625 0.5 0.375 1 0.625 1 0.375 1 0.875 0.5 0.875 0.75 0.875 0.75 0.625 0.5 0.875 0.5 0.875 0.5 0.625 0.5 0.625 0.75 0.625 0.5 0.375 0.75 0.625 0.75 0.625 0.75 0.375 1 0.375 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.875 0.5 0.875 0.75 0.625 0.75 0.375 1 0.625 1 0.625 0.75 0.625 0.75 0.875 0.75 0.875 0.5 0.375 1 0.625 1 0.625 1 0.875 0.5 0.875 0.5 0.875 0.75 0.625 0.5 0.625 0.5 0.875 0.5 0.625 0.5 0.625 0.75 0.625 0.75 0.375 0.75 0.375 0.75 0.625 0.75 0.375 1 0.375 1 0.375 0.75</float_array>
+          <technique_common>
+            <accessor source="#Cube_001-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_001-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_001-mesh-positions"/>
+        </vertices>
+        <triangles count="20">
+          <input semantic="VERTEX" source="#Cube_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube_001-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 0 0 1 3 0 2 2 1 3 4 1 4 5 1 5 6 2 6 10 2 7 9 2 8 10 3 9 8 3 10 11 3 11 0 4 12 7 4 13 6 4 14 2 4 15 7 4 16 1 4 17 5 2 18 8 2 19 2 2 20 5 5 21 10 5 22 11 5 23 3 6 24 10 6 25 4 6 26 0 3 27 9 3 28 3 3 29 4 0 30 1 0 31 0 0 32 2 1 33 1 1 34 4 1 35 6 2 36 7 2 37 10 2 38 10 3 39 7 3 40 8 3 41 0 7 42 1 7 43 7 7 44 2 4 45 8 4 46 7 4 47 5 2 48 11 2 49 8 2 50 5 5 51 4 5 52 10 5 53 3 5 54 9 5 55 10 5 56 0 3 57 6 3 58 9 3 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Torus_001" name="Torus.001" type="NODE">
+        <matrix sid="transform">0.08027142 0 0 0 0 -0.08027142 -2.80055e-7 -0.689484 0 2.80055e-7 -0.08027142 -0.19978 0 0 0 1</matrix>
+        <instance_geometry url="#Torus_001-mesh" name="Torus.001"/>
+      </node>
+      <node id="Cube" name="Cube" type="NODE">
+        <matrix sid="transform">0.2531301 0 0 0 0 0.2531301 0 -0.689484 0 0 0.2531301 -0.19978 0 0 0 1</matrix>
+        <instance_geometry url="#Cube_001-mesh" name="Cube"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

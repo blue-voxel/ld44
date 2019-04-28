@@ -1,7 +1,7 @@
 extends "res://script/area2d/_Scan.gd"
 
-export (int) var accept_only = 0
-var sum_value
+var accept_only = 0
+var sum_value = 0
 
 func set_width(w):
 	$CollisionShape2D.shape.extents.x = w
