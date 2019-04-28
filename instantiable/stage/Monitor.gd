@@ -13,39 +13,32 @@ var coroutine = null
 
 var due_value = 0
 
-func stage_stop():
+func stop():
+	print("in stop: ",coroutine)
 	stage = STOP
-	coroutine = stage_begin()
+	yield()
 
-func stage_begin():
+func begin():
+
 	stage = BEGIN
 	$AnimationPlayer.play("scan")
-	while yield($AnimationPlayer, "animation_finished") != "yeet":
-		$AnimationPlayer.play("scan")
-	coroutine = stage_scan()
-	
-func stage_scan():
+	yield()
+
 	stage = SCAN
-	
 	$AnimationPlayer.play("due")
 	yield()
-	coroutine = stage_cache()
 
-func stage_cache():
 	stage = CACHE
-	coroutine = stage_change()
+	yield()
 
-func stage_change():
 	stage = CHANGE
-	coroutine = stage_complete()
-
-func stage_complete():
+	yield()
+	
 	stage = COMPLETE
-	coroutine = stage_scan()
+	coroutine = begin()
 
 
 func _on_scan(value):
-	print("item scanned, current stage: ",stage)
 	if stage == SCAN - 1:
 		progress_stage()
 	due_value = value
@@ -58,5 +51,10 @@ func progress_stage():
 	print("progressing stage...")
 	coroutine.resume("yeet")
 
+func _test():
+	print("hello")
+	yield()
+	print("world")
+
 func _ready():
-	coroutine = stage_stop()
+	coroutine = begin()
