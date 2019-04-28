@@ -12,6 +12,8 @@ collision_mask = 4
 
 [node name="Value" type="Node" parent="."]
 script = ExtResource( 1 )
+amount = 5
+fixed_amount = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

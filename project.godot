@@ -26,7 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-UTILS="*res://script/singleton/Utils.gd"
+Utils="*res://script/singleton/Utils.gd"
 
 [physics]
 
