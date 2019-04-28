@@ -32,14 +32,13 @@ func _ready():
 	
 	for i in range(len(pockets)):
 		pockets[i].accept_only = Utils.MONEY[i]
-
-func _process(delta):
-	get_sum_value()
+		pockets[i].connect("update", self, "get_sum_value")
 
 func get_sum_value():
 	sum_value = 0
 	for p in pockets:
 		sum_value += p.sum_value
+	emit_signal("update", sum_value)
 
 #export (int, 1, 10) var pocket_count setget set_pocket_count
 #export (float, 0, 1000) var height setget set_height
@@ -79,4 +78,5 @@ func get_sum_value():
 #	print("preloading")
 #	pocket_scene = preload("res://instantiable/stage/CashRegisterPocket.tscn")
 
+signal update(value)
 

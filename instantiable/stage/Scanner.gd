@@ -26,7 +26,7 @@ func _on_body_entered(body):
 	if active and not body in exceptions:
 		exceptions.push_back(body)
 		sum_value += _get_content_value(body)
-		print(sum_value)
+		emit_signal("update", sum_value)
 	set_active(false)
 
 func _on_body_exited(body):
@@ -37,4 +37,4 @@ func _on_body_exited(body):
 		print(get_overlapping_bodies(), body)
 
 #I put my signals at the bottom because they ruin the color rules in vscode
-signal detection(value)
+signal update(value)

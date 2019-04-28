@@ -71,3 +71,4 @@ scale = Vector2( 0.28, 0.28 )
 position = Vector2( 114, 182 )
 
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
+[connection signal="update" from="Scanner" to="Monitor" method="_on_scan"]
