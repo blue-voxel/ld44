@@ -47,13 +47,7 @@ func set_due_value(value):
 	$Screen.get_node("Due").set_amount(value)
 
 func progress_stage():
-	print("progressing stage...")
-	coroutine.resume("yeet")
-
-func _test():
-	print("hello")
-	yield()
-	print("world")
+	coroutine.resume()
 
 func _ready():
 	coroutine = begin()
