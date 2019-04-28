@@ -24,6 +24,10 @@ config/name="Your life is currency"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+UTILS="*res://script/singleton/Utils.gd"
+
 [physics]
 
 2d/default_gravity=1600

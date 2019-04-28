@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://instantiable/stage/CashRegister.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/colshape2d/DrawShape.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://instantiable/currency/_test/Coin1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://instantiable/currency/_test/Coin2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://instantiable/currency/_test/Coin5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://instantiable/products/_test/BoxProduct.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 286, 32 )
@@ -39,7 +40,6 @@ shape = SubResource( 3 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CursorBody"]
 node_a = NodePath("..")
-bias = 0.9
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 552, 236 )
@@ -57,6 +57,9 @@ position = Vector2( 810, 96 )
 position = Vector2( 686, 60 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 876, 222 )
+position = Vector2( 732, 262 )
+
+[node name="RigidBody2D7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 920, 252 )
 
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]

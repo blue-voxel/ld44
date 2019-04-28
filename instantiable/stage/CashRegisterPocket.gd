@@ -1,5 +1,6 @@
 extends Area2D
 
+export (int) var accept_only = 0
 var sum_value
 
 func set_width(w):
@@ -17,7 +18,7 @@ func _ready():
 
 func get_content_value(body):
 	var v = body.get_node_or_null("Value")
-	if v:
+	if v and (not accept_only or v.amount == accept_only):
 		return v.amount
 	return 0
 

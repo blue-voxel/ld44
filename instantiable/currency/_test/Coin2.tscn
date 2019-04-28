@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.2317
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Coin$2" type="RigidBody2D"]
 collision_layer = 5
 collision_mask = 4
 
