@@ -73,7 +73,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "due"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Screen/Scan:visible")
 tracks/0/interp = 1
@@ -294,13 +293,12 @@ text = "Please Scan Items"
 autowrap = true
 
 [node name="Due" type="Control" parent="Screen"]
-visible = false
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 327.0
 margin_bottom = 235.0
 script = ExtResource( 4 )
-amount = 50
+amount = 9
 
 [node name="Label" type="Label" parent="Screen/Due"]
 margin_right = 324.0
@@ -314,7 +312,7 @@ margin_top = 82.0
 margin_right = 324.0
 margin_bottom = 153.0
 custom_fonts/font = ExtResource( 5 )
-text = "$50"
+text = "$9"
 align = 1
 valign = 1
 

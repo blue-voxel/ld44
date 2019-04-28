@@ -37,11 +37,10 @@ func begin():
 	stage = COMPLETE
 	coroutine = begin()
 
-
 func _on_scan(value):
 	if stage == SCAN - 1:
 		progress_stage()
-	due_value = value
+	set_due_value(value)
 
 func set_due_value(value):
 	due_value = value
