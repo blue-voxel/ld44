@@ -7,6 +7,7 @@
 radius = 36.4966
 
 [node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -15,5 +16,5 @@ col = Color( 0.909804, 0.72549, 0.121569, 1 )
 
 [node name="Value" type="Node" parent="."]
 script = ExtResource( 2 )
-amount = 3
+amount = 4
 

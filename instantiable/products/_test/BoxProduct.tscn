@@ -16,5 +16,5 @@ col = Color( 0.709804, 0.611765, 0.576471, 1 )
 
 [node name="Value" type="Node" parent="."]
 script = ExtResource( 2 )
-amount = 8
+amount = 7
 
