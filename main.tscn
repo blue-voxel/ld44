@@ -26,7 +26,7 @@ margin_right = 1044.0
 margin_bottom = 767.0
 
 [node name="CashRegister" parent="." instance=ExtResource( 2 )]
-position = Vector2( 186, 494 )
+position = Vector2( 234, 494 )
 scale = Vector2( 4, 4 )
 z_index = -6
 z_as_relative = false

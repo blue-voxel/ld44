@@ -84,7 +84,7 @@ func pupil_dart():
 		yield(get_tree().create_timer(randf() * 4), "timeout")
 
 func blink():
-	if update_animation_flag: #animation player is not context sensitive so 
+	if update_animation_flag and not $AnimationPlayer.is_playing(): #animation player is not context sensitive so 
 		#$AnimationPlayer.remove_animation("blink")
 		#$AnimationPlayer.add_animation("blink", blink_animation())
 		blink_animation()
