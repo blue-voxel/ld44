@@ -1,7 +1,7 @@
 tool
 extends Node2D
 
-class_name Mouth, "res://image/mouth.scg"
+class_name Mouth
 
 
 export (float) var width = 10 setget set_width
@@ -21,25 +21,29 @@ func set_anger(v):
 	update()
 
 onready var curve = Curve2D.new()
+onready var lips = Color("#c28787")
 
 func _ready():
 	_update()
 	
 func _update():
+	var adj_anger = anger * height
 	var half_width = width / 2
-	var anger = Vector2(10, 10)
-	var reverse_anger = Vector2(-10, -10)
+	var anger_point = Vector2(adj_anger, -adj_anger)
+	var reverse_anger_point = Vector2(-adj_anger, -adj_anger)
 	# So these anger and reverse_anger things are supposed to help
 	# shape the mouth to be sad. More anger, more sadness.
 	# The mouth is roughly a rectangle which is supposed to be warped upwards
 	# at the center
 	var nothing = Vector2(0, 0)
-	curve.add_point(Vector2(-half_width, 0), nothing, anger)
-	curve.add_point(Vector2(half_width, 0), reverse_anger, nothing)
-	curve.add_point(Vector2(half_width, height), nothing, reverse_anger)
-	curve.add_point(Vector2(-half_width, height), anger, nothing)
-	curve.add_point(Vector2(-half_width, 0))
+	curve.add_point(Vector2(-half_width, adj_anger), nothing, anger_point)
+	curve.add_point(Vector2(half_width, adj_anger), reverse_anger_point, nothing)
 	
 func _draw():
-	draw_polyline(curve.get_baked_points(), Color("#aaa"), 2)
+	var adj_anger = anger * height
+	var half_width = width / 2
+	draw_circle(Vector2(-half_width, adj_anger), 4, lips)
+	draw_circle(Vector2(half_width, adj_anger), 4, lips)
+	draw_polyline(curve.get_baked_points(), lips, 10)
+	draw_polyline(curve.get_baked_points(), Color("#000"), 4)
 	
