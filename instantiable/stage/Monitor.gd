@@ -10,10 +10,9 @@ func _ready():
 	on_game_progress(Game.stage)
 
 func _on_scan(value):
-	if Game.stage == Game.SCAN - 1:
+	if Game.next_stage() == Game.SCAN:
 		Game.progress_stage()
-	if Game.stage == Game.SCAN: #hopefully this will prevent more headscratches than it causes
-		set_due_value(value)
+	set_due_value(value)
 
 func set_due_value(value):
 		due_value = value
