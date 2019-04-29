@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/custom/Value.gd" type="Script" id=1]
 [ext_resource path="res://script/colshape2d/DrawDodlar.gd" type="Script" id=2]
+[ext_resource path="res://script/node2d/Eye.gd" type="Script" id=3]
+[ext_resource path="res://script/node2d/Mouth.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.2317
@@ -20,5 +22,15 @@ shape = SubResource( 1 )
 script = ExtResource( 2 )
 col = Color( 0.603922, 0.65098, 1, 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Node2D" type="Node2D" parent="CollisionShape2D"]
+position = Vector2( 0, -5.74337 )
+script = ExtResource( 3 )
+pupil_size = 0.287
 
+[node name="Mouth" type="Node2D" parent="CollisionShape2D"]
+position = Vector2( -0.263512, 11.0679 )
+script = ExtResource( 4 )
+width = 50.0
+height = 5.8
+
+[node name="Sprite" type="Sprite" parent="."]
