@@ -55,13 +55,14 @@ func draw_pupil():
 	draw_circle(pos, radius * pupil_size, Color("#111"))
 
 func draw_eyelids():
-	var points = semicircle(Vector2(radius, radius))
-	points += semicircle(Vector2(radius * -1, radius * (1 - lid_lower))) #the -1 is to reverse the points along the x axis so they join up nicely with the previous points
-	draw_colored_polygon(PoolVector2Array(points), color)
-	
-	points = semicircle(Vector2(radius, radius * -1))
-	points += semicircle(Vector2(radius, radius * (1 - lid_upper)) * -1)
-	draw_colored_polygon(PoolVector2Array(points), color)
+	if lid_lower:
+		var points = semicircle(Vector2(radius, radius))
+		points += semicircle(Vector2(radius * -1, radius * (1 - lid_lower))) #the -1 is to reverse the points along the x axis so they join up nicely with the previous points
+		draw_colored_polygon(PoolVector2Array(points), color)
+	if lid_upper:
+		var points = semicircle(Vector2(radius, radius * -1))
+		points += semicircle(Vector2(radius, radius * (1 - lid_upper)) * -1)
+		draw_colored_polygon(PoolVector2Array(points), color)
 
 func semicircle(scale=Vector2(1,1), centre=Vector2(0,0), resolution=16):
 	var points = PoolVector2Array()
