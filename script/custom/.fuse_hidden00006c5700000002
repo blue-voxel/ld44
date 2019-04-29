@@ -37,12 +37,12 @@ func set_pupil_position(v):
 
 func set_lid_upper(f):
 	lid_upper = f
-	update_animation()
+	update_animation())
 	update()
 
 func set_lid_lower(f):
 	lid_lower = f
-	update_animation()
+	update_animation())
 	update()
 	
 func _draw():
@@ -78,7 +78,7 @@ func blink():
 		#$AnimationPlayer.add_animation("blink", blink_animation())
 		blink_animation()
 	$AnimationPlayer.play("blink")
-	$AnimationPlayer.connect("animation_finished", self, "update_animation", [false])
+	$AnimationPlayer.connect("animation_finished", self, update_animation, [false])
 
 func blink_animation():
 	var anim = $AnimationPlayer.get_animation("blink")
