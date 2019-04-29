@@ -13,7 +13,7 @@ func _ready():
 func _on_scan(value):
 	if Game.stage == Game.SCAN - 1:
 		Game.progress_stage()
-	elif Game.stage == Game.SCAN: #hopefully this will prevent more headscratches than it causes
+	if Game.stage == Game.SCAN: #hopefully this will prevent more headscratches than it causes
 		set_due_value(value)
 
 func set_due_value(value):

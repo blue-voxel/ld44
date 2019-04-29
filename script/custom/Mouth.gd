@@ -3,11 +3,15 @@ extends Node2D
 
 class_name Mouth
 
-export (Color, RGB) var color = Color("#c28787")
+export (Color, RGB) var color = Color("#c28787") setget set_color
 export (float) var width = 10 setget set_width
 export (float) var radius = 10 setget set_radius
 export (float) var mood = 0 setget set_mood
 export (float, 0, 1) var crease = 0.2 setget set_crease
+
+func set_color(col):
+	color = col
+	update()
 
 func set_width(f):
 	width = f

@@ -70,12 +70,10 @@ script = ExtResource( 3 )
 color = Color( 0.807843, 0.807843, 0.807843, 0.196078 )
 
 [node name="Mouth" type="Node2D" parent="Customer"]
-position = Vector2( 48, 124 )
 script = ExtResource( 7 )
+color = Color( 0.584314, 0.317647, 0.317647, 1 )
 width = 115.13
 radius = 19.63
-mood = 0.068
-crease = 0.326
 
 [connection signal="update" from="CashRegister" to="Monitor" method="on_register_update"]
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
