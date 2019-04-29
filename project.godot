@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Utils="*res://script/singleton/Utils.gd"
+Game="*res://script/singleton/Game.gd"
 
 [physics]
 

@@ -1,53 +1,28 @@
 extends Node
 
-enum{
-	STOP,
-	BEGIN,
-	SCAN,
-	CACHE,
-	CHANGE,
-	COMPLETE,
-}
-var stage = 0
-var coroutine = null
-
 var due_value = 0
 
-func stop():
-	print("in stop: ",coroutine)
-	stage = STOP
-	yield()
-
-func begin():
-
-	stage = BEGIN
-	$AnimationPlayer.play("scan")
-	yield()
-
-	stage = SCAN
-	$AnimationPlayer.play("due")
-	yield()
-
-	stage = CACHE
-	yield()
-
-	stage = CHANGE
-	yield()
-	
-	stage = COMPLETE
-	coroutine = begin()
+func _ready():
+	Game.connect("progress", self, "on_game_progress")
+	on_game_progress(Game.stage)
 
 func _on_scan(value):
-	if stage == SCAN - 1:
-		progress_stage()
-	set_due_value(value)
+	if Game.stage == Game.SCAN - 1:
+		Game.progress_stage()
+	elif Game.stage == Game.SCAN: #hopefully this will prevent more headscratches than it causes
+		set_due_value(value)
 
 func set_due_value(value):
 	due_value = value
 	$Screen.get_node("Due").set_amount(value)
 
-func progress_stage():
-	coroutine.resume()
+func on_game_progress(stage):
+	print(stage)
+	match stage:
+		Game.BEGIN:
+			$AnimationPlayer.play("scan")
+		Game.SCAN:
+			$AnimationPlayer.play("due")
 
-func _ready():
-	coroutine = begin()
+func test(stage):
+	print("test",stage)
