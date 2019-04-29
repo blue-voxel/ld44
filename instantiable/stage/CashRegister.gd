@@ -38,7 +38,6 @@ func get_sum_value():
 	sum_value = 0
 	for p in pockets:
 		sum_value += p.sum_value
-	print(sum_value)
 	emit_signal("update", sum_value)
 
 #export (int, 1, 10) var pocket_count setget set_pocket_count

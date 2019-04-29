@@ -1,6 +1,7 @@
 extends "res://script/area2d/_Scan.gd"
 
-var accept_only = 0
+#warning-ignore:unused_class_variable
+export var accept_only = 0
 var sum_value = 0
 
 func _ready():

@@ -25,10 +25,8 @@ func spawn_item(item):
 	item.position = position + Vector2((randf() -0.5) * 100, (randf() -0.5) * 100)
 
 func on_active_product_scanned(index):
-	print(active_products)
 	active_products[index] = null
 	if not Utils.any(active_products):
-		print("attenmpting progression")
 		Game.progress_stage(Game.SCAN + 1)
 		drop_currency(active_value)
 		active_value = 0
