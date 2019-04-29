@@ -31,7 +31,7 @@ func on_active_product_scanned(index):
 func drop_currency(amount):
 	for i in range(amount):
 		spawn_dodlar(0)
-		yield(get_tree().create_timer(randf() * 0.2 + 0.1), "timeout")
+		yield(get_tree().create_timer(randf() * 0.1), "timeout")
 
 func spawn_dodlar(i):
 	var dodlar = Utils.get_currency()[i].instance()

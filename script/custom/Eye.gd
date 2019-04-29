@@ -4,11 +4,16 @@ extends Node2D
 class_name Eye
 
 
+export (Color, RGB) var color = Color("55f") setget set_color
 export (float) var radius = 10 setget set_radius
 export (float, 0, 1) var pupil_size = 0.2 setget set_pupil_size
 export var pupil_position = Vector2(0, 0) setget set_pupil_position
 export (float, 0, 1) var lid_upper = 0 setget set_lid_upper
 export (float, 0, 1) var lid_lower = 0 setget set_lid_lower
+
+func set_color(col):
+	color = col
+	update()
 
 func set_radius(f):
 	radius = f
@@ -37,12 +42,12 @@ func _draw():
 	
 func draw_eyelids():
 	var points = semicircle(Vector2(radius, radius))
-	points += semicircle(Vector2(radius * -1, radius * (1 - lid_upper))) #the -1 is to make to reverse the points along the x axis so they join up nicely with the previous points
-	draw_colored_polygon(PoolVector2Array(points), Color("#33a"))
+	points += semicircle(Vector2(radius * -1, radius * (1 - lid_lower))) #the -1 is to make to reverse the points along the x axis so they join up nicely with the previous points
+	draw_colored_polygon(PoolVector2Array(points), color)
 	
 	points = semicircle(Vector2(radius, radius * -1))
-	points += semicircle(Vector2(radius, radius * (1 - lid_lower)) * -1)
-	draw_colored_polygon(PoolVector2Array(points), Color("#33a"))
+	points += semicircle(Vector2(radius, radius * (1 - lid_upper)) * -1)
+	draw_colored_polygon(PoolVector2Array(points), color)
 #	var angle = 70
 #	draw_circle_arc_poly(Vector2(0, radius), radius, -angle, angle, Color("#eee"))
 #	draw_circle_arc_poly(Vector2(0, -radius), radius, 180-angle, 180+angle, Color("#eee"))

@@ -28,6 +28,8 @@ margin_bottom = 767.0
 [node name="CashRegister" parent="." instance=ExtResource( 2 )]
 position = Vector2( 186, 494 )
 scale = Vector2( 4, 4 )
+z_index = -6
+z_as_relative = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 448, 496 )
@@ -37,7 +39,7 @@ collision_layer = 0
 position = Vector2( 274, -18 )
 shape = SubResource( 1 )
 script = ExtResource( 3 )
-col = Color( 0.443137, 0.188235, 0.188235, 1 )
+color = Color( 0.603922, 0.407843, 0.278431, 1 )
 
 [node name="CursorBody" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -57,14 +59,14 @@ position = Vector2( 930, 446 )
 rotation = 3.14159
 scale = Vector2( 0.28, 0.28 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Customer" type="Area2D" parent="."]
 position = Vector2( 696, 156 )
 script = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Customer"]
 shape = SubResource( 3 )
 script = ExtResource( 3 )
-col = Color( 0.952941, 0.443137, 0.705882, 0.415686 )
+color = Color( 0.807843, 0.807843, 0.807843, 0.196078 )
 
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
 [connection signal="update" from="Scanner" to="Monitor" method="_on_scan"]

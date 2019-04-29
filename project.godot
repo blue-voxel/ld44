@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Eye",
 "language": "GDScript",
-"path": "res://script/node2d/Eye.gd"
+"path": "res://script/custom/Eye.gd"
 }, {
 "base": "Node",
 "class": "Value",
@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Your life is currency"
+config/name="Dodlars"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
