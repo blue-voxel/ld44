@@ -13,8 +13,8 @@ export (float, 0, 1) var lid_lower = 0 setget set_lid_lower
 
 var update_animation_flag = true
 
-func update_animation(b=true):
-	update_animation_flag = b
+func update_animation(s=""):
+	update_animation_flag = not s
 
 func set_color(col):
 	color = col
@@ -48,6 +48,7 @@ func set_lid_lower(f):
 
 func _ready():
 	pupil_dart()
+	$AnimationPlayer.connect("animation_finished", self, "update_animation")
 
 func _draw():
 	draw_circle(Vector2(0, 0), radius, Color("#FFF"))
@@ -88,7 +89,6 @@ func blink():
 		#$AnimationPlayer.add_animation("blink", blink_animation())
 		blink_animation()
 	$AnimationPlayer.play("blink")
-	$AnimationPlayer.connect("animation_finished", self, "update_animation", [false])
 
 func blink_animation():
 	var anim = $AnimationPlayer.get_animation("blink")
