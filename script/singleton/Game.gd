@@ -44,8 +44,8 @@ func begin():
 func progress_stage(target=null): #this is a safegaurd
 	if target == null or target == stage + 1: #haven't decided whether this check should bedone by the caller or here
 		coroutine.resume()
-	else:
-		print("progresstion denied:")
+	else: #this should never happen
+		print("progression denied:")
 		print("desired target: ",stage + 1)
 		print("supplied target: ",target)
 

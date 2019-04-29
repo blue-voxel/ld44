@@ -34,7 +34,17 @@ func get_scenes(path):
 		if file.ends_with(".tscn"):
 			scenes.push_back(load(path + "/" + file))
 		file = dir.get_next()
-	
+
 	return scenes
 
-	
+func any(Array: a):
+	for elem in a:
+		if elem:
+			return true
+	return false
+
+func all(Array: a):
+	for elem in a:
+		if not elem:
+			return false
+	return true

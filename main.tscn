@@ -20,10 +20,10 @@ z_index = 8
 z_as_relative = false
 
 [node name="Monitor" parent="." instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_top = 24.0
-margin_right = 1044.0
-margin_bottom = 767.0
+margin_left = 40.0
+margin_top = 45.0
+margin_right = 1020.0
+margin_bottom = 788.0
 
 [node name="CashRegister" parent="." instance=ExtResource( 2 )]
 position = Vector2( 234, 494 )
@@ -68,5 +68,6 @@ shape = SubResource( 3 )
 script = ExtResource( 3 )
 color = Color( 0.807843, 0.807843, 0.807843, 0.196078 )
 
+[connection signal="update" from="CashRegister" to="Monitor" method="_on_register_update"]
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
 [connection signal="update" from="Scanner" to="Monitor" method="_on_scan"]
