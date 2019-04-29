@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://instantiable/stage/monitor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://instantiable/stage/CashRegister.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://CursorBody.gd" type="Script" id=4]
 [ext_resource path="res://instantiable/stage/Scanner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Customer.gd" type="Script" id=6]
+[ext_resource path="res://script/custom/Mouth.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 286, 32 )
@@ -69,5 +70,11 @@ script = ExtResource( 3 )
 color = Color( 0.807843, 0.807843, 0.807843, 0.196078 )
 
 [connection signal="update" from="CashRegister" to="Monitor" method="_on_register_update"]
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 640.737, 282.958 )
+script = ExtResource( 7 )
+width = 50.0
+height = 40.0
+anger = 0.2
 [connection signal="item_rect_changed" from="StaticBody2D/CollisionShape2D" to="StaticBody2D/CollisionShape2D" method="update"]
 [connection signal="update" from="Scanner" to="Monitor" method="_on_scan"]
