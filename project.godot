@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Mouth",
 "language": "GDScript",
-"path": "res://script/node2d/Mouth.gd"
+"path": "res://script/custom/Mouth.gd"
 }, {
 "base": "Node",
 "class": "Value",

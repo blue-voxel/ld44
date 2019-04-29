@@ -1,7 +1,7 @@
 tool
 extends Node2D
 
-class_name Mouth
+class_name Mouth, "res://image/mouth.scg"
 
 
 export (float) var width = 10 setget set_width
@@ -20,13 +20,12 @@ func set_anger(v):
 	anger = v
 	update()
 
-var curve = Curve2D.new()
+onready var curve = Curve2D.new()
 
 func _ready():
 	_update()
 	
 func _update():
-	curve = Curve2D.new()
 	var half_width = width / 2
 	var anger = Vector2(10, 10)
 	var reverse_anger = Vector2(-10, -10)

@@ -7,5 +7,5 @@ func _ready():
 func set_color(col):
 	.set_color(col)
 	if has_node("Eye"):
-		$Eye.set_color(color * 0.8)
+		$Eye.set_color(color.darkened(0.3))
 

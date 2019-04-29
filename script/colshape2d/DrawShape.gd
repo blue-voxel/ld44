@@ -7,7 +7,6 @@ enum {RECT, CIRCLE}
 var draw_type = null
 
 func set_color(col):
-	print(col)
 	color = col
 	update()
 

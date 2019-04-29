@@ -21,7 +21,7 @@ func get_currency():
 	if len(currency):
 		return currency
 	else:
-		return get_scenes("res://instantiable/currency/_test")
+		return get_scenes("res://instantiable/currency")
 
 func get_scenes(path):
 	var scenes = []
@@ -36,4 +36,5 @@ func get_scenes(path):
 		file = dir.get_next()
 	
 	return scenes
+
 	
