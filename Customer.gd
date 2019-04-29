@@ -20,7 +20,7 @@ func spawn_product(i):
 
 func spawn_item(item):	
 	get_tree().get_root().call_deferred("add_child", item) #ensure that the scene is not busy when we add
-	item.position = position
+	item.position = position + Vector2((randf() -0.5) * 100, (randf() -0.5) * 100)
 
 func on_active_product_scanned(index):
 	active_products.remove(index)
@@ -31,7 +31,7 @@ func on_active_product_scanned(index):
 func drop_currency(amount):
 	for i in range(amount):
 		spawn_dodlar(0)
-		yield(get_tree().create_timer(randf()+0.2), "timeout")
+		yield(get_tree().create_timer(randf() * 0.2 + 0.1), "timeout")
 
 func spawn_dodlar(i):
 	var dodlar = Utils.get_currency()[i].instance()
