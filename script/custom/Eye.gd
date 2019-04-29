@@ -24,7 +24,10 @@ func set_pupil_size(f):
 	update()
 	
 func set_pupil_position(v):
-	pupil_position = v
+	if v.length_squared() > 1:
+		pupil_position = v.normalized() #ensure pupil position is whithin bounds
+	else:
+		pupil_position = v
 	update()
 
 func set_lid_upper(f):
@@ -37,9 +40,13 @@ func set_lid_lower(f):
 	
 func _draw():
 	draw_circle(Vector2(0, 0), radius, Color("#FFF"))
-	draw_circle(pupil_position * radius, radius * pupil_size, Color("#111"))
+	draw_pupil()
 	draw_eyelids()
-	
+
+func draw_pupil():
+	var pos = pupil_position * radius * (1 - pupil_size) #centre of pupil is at most one pupil radius from from the edge of the eye (assuming normalised position vector)
+	draw_circle(pos, radius * pupil_size, Color("#111"))
+
 func draw_eyelids():
 	var points = semicircle(Vector2(radius, radius))
 	points += semicircle(Vector2(radius * -1, radius * (1 - lid_lower))) #the -1 is to make to reverse the points along the x axis so they join up nicely with the previous points

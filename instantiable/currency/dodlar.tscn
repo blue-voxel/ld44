@@ -21,9 +21,10 @@ color = Color( 0.701961, 0.2, 0.490196, 1 )
 
 [node name="Eye" type="Node2D" parent="CollisionShape2D"]
 script = ExtResource( 3 )
-color = Color( 0.141176, 0.141176, 0.486275, 1 )
+color = Color( 0.529412, 0.137255, 0.431373, 1 )
 radius = 8.0
 pupil_size = 0.287
-lid_upper = 0.146
-lid_lower = 0.17
+pupil_position = Vector2( -0.08, 0.926 )
+lid_upper = 0.35
+lid_lower = 0.393
 
