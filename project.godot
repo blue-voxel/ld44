@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Eye",
+"language": "GDScript",
+"path": "res://script/node2d/Eye.gd"
+}, {
 "base": "Node",
 "class": "Value",
 "language": "GDScript",
 "path": "res://script/custom/Value.gd"
 } ]
 _global_script_class_icons={
+"Eye": "",
 "Value": "res://image/dodlar_sign.svg"
 }
 
