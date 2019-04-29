@@ -13,7 +13,6 @@ func _process(delta):
 	#print((abs(max_offset - offset)))
 	eye_radius = (1 - abs(max_offset - offset)) * shape.radius * 0.5
 	offset *= shape.radius
-	print(eye_radius)
 	_draw()
 	
 #func _draw(): I think the circle() function should be extended as it is more specific to this, this isn't too important however

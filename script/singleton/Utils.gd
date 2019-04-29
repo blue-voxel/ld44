@@ -17,6 +17,12 @@ func get_products():
 	else:
 		return get_scenes("res://instantiable/products/_test")
 
+func get_currency():
+	if len(currency):
+		return currency
+	else:
+		return get_scenes("res://instantiable/currency/_test")
+
 func get_scenes(path):
 	var scenes = []
 	var dir = Directory.new()
