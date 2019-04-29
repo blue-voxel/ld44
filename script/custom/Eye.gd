@@ -30,9 +30,10 @@ func set_pupil_size(f):
 	
 func set_pupil_position(v):
 	if v.length_squared() > 1:
-		pupil_position = v.normalized() #ensure pupil position is whithin bounds
-	else:
-		pupil_position = v
+		v = v.normalized() #ensure pupil position is whithin bounds
+	if (v - pupil_position).length_squared() > 0.5:
+		blink()
+	pupil_position = v
 	update()
 
 func set_lid_upper(f):
@@ -44,7 +45,10 @@ func set_lid_lower(f):
 	lid_lower = f
 	update_animation()
 	update()
-	
+
+func _ready():
+	pupil_dart()
+
 func _draw():
 	draw_circle(Vector2(0, 0), radius, Color("#FFF"))
 	draw_pupil()
@@ -72,6 +76,11 @@ func semicircle(scale=Vector2(1,1), centre=Vector2(0,0), resolution=16):
 			sin(PI * i / resolution)
 		) * scale + centre)
 	return points
+
+func pupil_dart():
+	while true:
+		set_pupil_position(Vector2(randf() * 2 - 1, randf() * 2 - 1))
+		yield(get_tree().create_timer(randf() * 4), "timeout")
 
 func blink():
 	if update_animation_flag: #animation player is not context sensitive so 
