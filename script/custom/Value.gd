@@ -24,6 +24,7 @@ func set_fixed_amount(i, update_amount=true):
 	else:
 		property_list_changed_notify()
 
+signal scanned
 
 
 

@@ -26,6 +26,7 @@ func _on_body_entered(body):
 	if active and not body in exceptions:
 		exceptions.push_back(body)
 		sum_value += _get_content_value(body)
+		body.get_node("Value").emit_signal("scanned")
 		emit_signal("update", sum_value)
 	set_active(false)
 

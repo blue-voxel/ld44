@@ -22,7 +22,7 @@ amount = 4
 script = ExtResource( 3 )
 radius = 25.32
 pupil_size = 0.375
-pupil_position = Vector2( -0.05, 0 )
-lid_upper = 0.631
-lid_lower = 0.146
+pupil_position = Vector2( -0.03, 0 )
+lid_upper = 0.281
+lid_lower = 0.282
 
