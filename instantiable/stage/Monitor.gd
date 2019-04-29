@@ -21,6 +21,7 @@ func set_due_value(value):
 		$Screen.get_node("Due").set_amount(value)
 
 func on_register_update(value):
+	print(value)
 	if Game.stage == Game.CACHE:
 		register_delta = value - register_value
 		set_due_value(due_value - register_delta)
@@ -42,6 +43,3 @@ func on_game_progress(stage):
 func test(stage):
 	print("test",stage)
 
-
-func _on_register_update(value):
-	pass # Replace with function body.

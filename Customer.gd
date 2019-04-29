@@ -1,7 +1,5 @@
 extends "res://script/area2d/_Scan.gd"
 
-export(String, DIR) var path = "res://instantiable/product"
-
 var active_products = []
 var active_value = 0
 
@@ -26,9 +24,9 @@ func spawn_item(item):
 	get_tree().get_root().call_deferred("add_child", item) #ensure that the scene is not busy when we add
 	item.position = position + Vector2((randf() -0.5) * 100, (randf() -0.5) * 100)
 
-func on_active_product_scanned(product):
+func on_active_product_scanned(index):
 	print(active_products)
-	active_products.erase(product)
+	active_products[index] = null
 	if not Utils.any(active_products):
 		print("attenmpting progression")
 		Game.progress_stage(Game.SCAN + 1)

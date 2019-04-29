@@ -3,47 +3,50 @@ extends Node2D
 
 class_name Mouth
 
-
+export (Color, RGB) var color = Color("#c28787")
 export (float) var width = 10 setget set_width
-export (float) var height = 10 setget set_height
-export (float, 0, 1) var anger = 0 setget set_anger
+export (float) var radius = 10 setget set_radius
+export (float) var mood = 0 setget set_mood
+export (float, 0, 1) var crease = 0.2 setget set_crease
 
 func set_width(f):
 	width = f
+	update_curve()
 	update()
 
-func set_height(f):
-	height = f
+func set_radius(f):
+	radius = f
 	update()
 	
-func set_anger(v):
-	anger = v
+func set_mood(v):
+	mood = v
+	update_curve()
 	update()
 
-onready var curve = Curve2D.new()
-onready var lips = Color("#c28787")
+func set_crease(f):
+	crease = f
+	update()
+
+var curve
 
 func _ready():
-	_update()
+	update_curve()
 	
-func _update():
-	var adj_anger = anger * height
+func update_curve():
+	curve = Curve2D.new()
+	var adj_mood = mood * 10
 	var half_width = width / 2
-	var anger_point = Vector2(adj_anger, -adj_anger)
-	var reverse_anger_point = Vector2(-adj_anger, -adj_anger)
-	# So these anger and reverse_anger things are supposed to help
-	# shape the mouth to be sad. More anger, more sadness.
-	# The mouth is roughly a rectangle which is supposed to be warped upwards
-	# at the center
+	var mood_point = Vector2(adj_mood, -adj_mood)
+	var reverse_mood_point = Vector2(-adj_mood, -adj_mood)
 	var nothing = Vector2(0, 0)
-	curve.add_point(Vector2(-half_width, adj_anger), nothing, anger_point)
-	curve.add_point(Vector2(half_width, adj_anger), reverse_anger_point, nothing)
+	curve.add_point(Vector2(-half_width, adj_mood), nothing, mood_point)
+	curve.add_point(Vector2(half_width, adj_mood), reverse_mood_point, nothing)
 	
 func _draw():
-	var adj_anger = anger * height
-	var half_width = width / 2
-	draw_circle(Vector2(-half_width, adj_anger), 4, lips)
-	draw_circle(Vector2(half_width, adj_anger), 4, lips)
-	draw_polyline(curve.get_baked_points(), lips, 10)
-	draw_polyline(curve.get_baked_points(), Color("#000"), 4)
-	
+	draw_curve(color, radius)
+	draw_curve(color.darkened(0.6), radius * crease)
+
+func draw_curve(color, line_width):
+	draw_polyline(curve.get_baked_points(), color, line_width)
+	draw_circle(curve.get_point_position(0), line_width / 2, color)
+	draw_circle(curve.get_point_position(curve.get_point_count() - 1), line_width / 2, color)

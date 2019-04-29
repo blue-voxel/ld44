@@ -37,13 +37,13 @@ func get_scenes(path):
 
 	return scenes
 
-func any(Array: a):
+func any(a):
 	for elem in a:
 		if elem:
 			return true
 	return false
 
-func all(Array: a):
+func all(a):
 	for elem in a:
 		if not elem:
 			return false
